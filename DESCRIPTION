@@ -1,0 +1,10 @@
+Package: medicoverReservation
+Title: Find and reserved best doctor you are looking for 
+Version: 0.1
+Authors@R: person("Kacper", "Trzaskalski", email = "kacper.trzaskalski@gmail.com",
+                  role = c("aut", "cre"))
+Description: Log into medicover and search for doctors. Get doctors stats from znanylekarz 
+Depends: R (>= 3.1.0)
+License: MIT
+LazyData: true
+RoxygenNote: 6.0.1.9000
