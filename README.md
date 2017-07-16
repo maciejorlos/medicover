@@ -1,3 +1,3 @@
 # medicover
-This project gather doctors availability data from medicover.com website, mixed it with doctor grades from znanylekarz.
-Based on those stats user can take decision to which doctor signed in medicover portal.
+This project gathers doctors availability data from medicover.com website, mixed it with doctors' grades from znanylekarz.
+Based on those stats user can make a decision with which doctor would like to book a visit in medicover portal.
