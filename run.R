@@ -1,10 +1,14 @@
 source("00-load_packages.R")
 
 rD <- rsDriver(port = 4570L, browser = "chrome")
+
+
 remDr <- rD[["client"]]
+
 log_into_medicover()
 Sys.sleep(5)
-dynamic_url(doctor = "ortopeda")
+#undebug(dynamic_url)
+dynamic_url(doctor = "ortopeda", region ="warszawa")
 Sys.sleep(15)
 
 medicover_data <- get_reservation_data(sleep_time = 12, click_break = 5)

@@ -14,13 +14,11 @@ dynamic_url <- function(doctor = "endokrynolog", region ="warszawa") {
   remDr$navigate(start_url)
   Sys.sleep(5)
   doctors <- get_ids_list(field_name = "SpecializationId")
-    
+ ## zamiana na character
   doctor_number <- doctors[tolower(name) %like% doctor & !(tolower(name) %like%   'telefoni')][order(nchar(name))][1]
 
   regions <- get_ids_list(field_name = "RegionId")
   region_number <- regions[tolower(name) %like% tolower(region) ][order(nchar(name))][1]
-  
-  
   
   
   new_url <- paste(sprintf("https://mol.medicover.pl/MyVisits?regionId=%s&bookingTypeId=2&specializationId=%s",
@@ -31,6 +29,8 @@ dynamic_url <- function(doctor = "endokrynolog", region ="warszawa") {
   remDr$navigate(new_url)
   Sys.sleep(4)
   ### Click search button
+  
+  
   find <- remDr$findElement(using = "xpath", '//*[@id="collapse_3_1"]/div/div[4]/div/div/button')
   find$clickElement()
 }
@@ -53,7 +53,7 @@ get_ids_list <- function(field_name = "SpecializationId") {
   doc <- htmlParse(webElem5txt, encoding = "UTF-8")
   
   data <- data.table(id = unlist(doc["//option", fun = function(x) xmlGetAttr(x, "value")],F,F),
-                     name = doc["//option", fun = function(x) xmlValue(x)])
+                     name = unlist(doc["//option", fun = function(x) xmlValue(x)], F,F))
   
   return(data)
   

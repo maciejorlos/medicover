@@ -1,4 +1,4 @@
-Package: medicoverReservation
+Package: medicover
 Title: Find and reserved best doctor you are looking for 
 Version: 0.1
 Authors@R: person("Kacper", "Trzaskalski", email = "kacper.trzaskalski@gmail.com",
