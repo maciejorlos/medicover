@@ -7,7 +7,7 @@ remDr <- rD[["client"]]
 
 log_into_medicover()
 Sys.sleep(5)
-#undebug(dynamic_url)
+debug(dynamic_url)
 dynamic_url(doctor = "ortopeda", region ="warszawa")
 Sys.sleep(15)
 

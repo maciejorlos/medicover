@@ -14,7 +14,7 @@ dynamic_url <- function(doctor = "endokrynolog", region ="warszawa") {
   remDr$navigate(start_url)
   Sys.sleep(5)
   doctors <- get_ids_list(field_name = "SpecializationId")
- ## zamiana na character
+    ## zamiana na character
   doctor_number <- doctors[tolower(name) %like% doctor & !(tolower(name) %like%   'telefoni')][order(nchar(name))][1]
 
   regions <- get_ids_list(field_name = "RegionId")
